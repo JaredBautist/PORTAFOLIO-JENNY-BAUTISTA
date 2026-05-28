@@ -16,7 +16,7 @@ export function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="sobre-mi" className="py-24 bg-card relative overflow-hidden">
+    <section id="sobre-mi" className="py-16 md:py-24 bg-card relative overflow-hidden">
       {/* Decorative Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-secondary/50 to-transparent" />
       
@@ -26,7 +26,7 @@ export function About() {
           animate={isInView ? "animate" : "initial"}
           variants={fadeInUp}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="text-primary text-sm font-medium tracking-widest uppercase">
             Conoceme
@@ -36,21 +36,21 @@ export function About() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Profile Text */}
           <motion.div
             initial="initial"
             animate={isInView ? "animate" : "initial"}
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               Soy una persona comprometida con mi trabajo, emprendedora, paciente y con 
               mucha inteligencia emocional. Siempre entrego lo mejor de mi a las personas 
               que me necesitan, doy acompanamiento y soy una mujer de soluciones, muy proactiva.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
               <strong className="text-foreground">Terapeuta ocupacional</strong> de profesion, 
               <strong className="text-foreground"> Especialista en Alta Gerencia</strong>, 
               <strong className="text-foreground"> Especialista en Gerencia en Salud Ocupacional</strong> y 
@@ -61,11 +61,11 @@ export function About() {
             </p>
 
             {/* Credentials */}
-            <div className="flex flex-wrap gap-3 pt-4">
+            <div className="flex flex-wrap gap-2 md:gap-3 pt-2 md:pt-4">
               {["Terapeuta Ocupacional", "Alta Gerencia", "Salud Ocupacional", "Psicoterapeuta Conductual"].map((cred) => (
                 <span
                   key={cred}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground text-sm rounded-full"
+                  className="px-3 md:px-4 py-1.5 md:py-2 bg-secondary text-secondary-foreground text-xs md:text-sm rounded-full"
                 >
                   {cred}
                 </span>
@@ -73,8 +73,8 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Mission & Vision Cards with Images */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          {/* Mission & Vision Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <motion.div
               initial="initial"
               animate={isInView ? "animate" : "initial"}
@@ -141,15 +141,15 @@ export function About() {
           animate={isInView ? "animate" : "initial"}
           variants={fadeInUp}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="relative h-80 lg:h-96 rounded-2xl overflow-hidden"
+              className="relative h-56 sm:h-72 lg:h-96 rounded-2xl overflow-hidden"
             >
               <Image
                 src="/images/objetivos.png"

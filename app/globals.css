@@ -128,3 +128,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Mejoras generales para móvil */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Evitar overflow horizontal en toda la página */
+body {
+  overflow-x: hidden;
+}

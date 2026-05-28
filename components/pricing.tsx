@@ -40,7 +40,7 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="precios" className="py-24 bg-secondary/30 relative overflow-hidden">
+    <section id="precios" className="py-16 md:py-24 bg-secondary/30 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-40">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ export function Pricing() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="text-primary text-sm font-medium tracking-widest uppercase">
             Inversión en tu Bienestar
@@ -72,14 +72,14 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {planes.map((plan, index) => (
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className={`relative bg-card rounded-3xl p-8 border-2 transition-all hover:shadow-xl ${
+              className={`relative bg-card rounded-3xl p-6 md:p-8 border-2 transition-all hover:shadow-xl ${
                 plan.popular
                   ? "border-primary shadow-lg shadow-primary/10"
                   : "border-border hover:border-primary/30"
@@ -94,18 +94,18 @@ export function Pricing() {
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
+              <div className="text-center mb-6 md:mb-8">
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-2">
                   {plan.name}
                 </h3>
-                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-6">
+                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4 md:mb-6">
                   <Clock size={16} />
                   <span>{plan.duration}</span>
                 </div>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-2xl font-medium text-muted-foreground">$</span>
-                  <span className="text-5xl font-bold text-foreground">{plan.price}</span>
-                  <span className="text-muted-foreground">COP</span>
+                  <span className="text-xl font-medium text-muted-foreground">$</span>
+                  <span className="text-4xl md:text-5xl font-bold text-foreground">{plan.price}</span>
+                  <span className="text-muted-foreground text-sm">COP</span>
                 </div>
               </div>
 

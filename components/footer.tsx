@@ -17,9 +17,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-foreground text-background py-16">
+    <footer className="bg-foreground text-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-12">
           {/* Brand */}
           <div>
             <Link href="#inicio" className="inline-block mb-4">
@@ -68,7 +68,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="sm:col-span-1">
             <h4 className="font-medium text-lg mb-4">Enlaces Rapidos</h4>
             <nav className="flex flex-col gap-3">
               {[
@@ -121,7 +121,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-6 md:pt-8 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4 text-center sm:text-left">
           <p className="text-sm text-background/60">
             {currentYear} Jenny Bautista Garcia. Todos los derechos reservados.
           </p>
