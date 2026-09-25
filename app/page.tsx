@@ -5,6 +5,7 @@ import { Services } from "@/components/services"
 import { Pricing } from "@/components/pricing"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { WhatsAppFab } from "@/components/whatsapp-fab"
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Pricing />
       <Contact />
       <Footer />
+      <WhatsAppFab />
     </main>
   )
 }

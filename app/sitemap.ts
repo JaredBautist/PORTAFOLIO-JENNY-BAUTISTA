@@ -1,11 +1,10 @@
 import type { MetadataRoute } from 'next'
-
-const SITE_URL = 'https://jennybautistagarcia.com'
+import { siteConfig } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: SITE_URL,
+      url: siteConfig.url,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
