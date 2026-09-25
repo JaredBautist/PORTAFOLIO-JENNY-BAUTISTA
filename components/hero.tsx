@@ -9,7 +9,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-svh flex items-center justify-center overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-muted" />
@@ -24,7 +24,7 @@ export function Hero() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-20 pb-8">
+      <div className="container mx-auto px-4 relative z-10 pt-24 pb-24 sm:pt-28 sm:pb-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           {/* Doctor Image — visible en móvil arriba, en desktop a la derecha */}
           <motion.div
@@ -147,12 +147,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator — oculto en pantallas bajas para no chocar con los CTAs */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden min-[420px]:block"
       >
         <Link
           href="#sobre-mi"

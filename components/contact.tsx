@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Phone, Instagram, Mail, Send, CheckCircle } from "lucide-react"
+import { Phone, Instagram, Mail, Send, CheckCircle, MessageCircle } from "lucide-react"
 
 const Facebook = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -26,6 +26,7 @@ export function Contact() {
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [sendMethod, setSendMethod] = useState<"whatsapp" | "email">("whatsapp")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -52,13 +53,13 @@ export function Contact() {
 
     const mailtoUrl = `mailto:jennybautista28@hotmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
 
-    // Abrir WhatsApp primero (requiere interacción directa del usuario)
-    window.open(whatsappUrl, "_blank")
-
-    // Abrir el cliente de correo con un pequeño delay para evitar bloqueo del navegador
-    setTimeout(() => {
+    // Abrir solo el canal elegido por el usuario (la interacción directa
+    // evita que los navegadores bloqueen la ventana emergente)
+    if (sendMethod === "whatsapp") {
+      window.open(whatsappUrl, "_blank")
+    } else {
       window.location.href = mailtoUrl
-    }, 500)
+    }
     
     // Mostrar mensaje de éxito y limpiar formulario
     setIsSubmitted(true)
@@ -212,12 +213,47 @@ export function Contact() {
                   />
                 </div>
 
+                {/* Selector de canal de envío */}
+                <fieldset>
+                  <legend className="block text-sm font-medium text-foreground mb-2">
+                    ¿Cómo prefieres enviarlo?
+                  </legend>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={() => setSendMethod("whatsapp")}
+                      aria-pressed={sendMethod === "whatsapp"}
+                      className={`flex items-center justify-center gap-2 py-3 rounded-xl border font-medium text-sm transition-all ${
+                        sendMethod === "whatsapp"
+                          ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
+                          : "bg-card border-border text-foreground hover:border-primary/40"
+                      }`}
+                    >
+                      <MessageCircle size={16} aria-hidden="true" />
+                      WhatsApp
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setSendMethod("email")}
+                      aria-pressed={sendMethod === "email"}
+                      className={`flex items-center justify-center gap-2 py-3 rounded-xl border font-medium text-sm transition-all ${
+                        sendMethod === "email"
+                          ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
+                          : "bg-card border-border text-foreground hover:border-primary/40"
+                      }`}
+                    >
+                      <Mail size={16} aria-hidden="true" />
+                      Correo
+                    </button>
+                  </div>
+                </fieldset>
+
                 <button
                   type="submit"
                   className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
                 >
-                  <Send size={18} />
-                  Enviar Mensaje
+                  <Send size={18} aria-hidden="true" />
+                  {sendMethod === "whatsapp" ? "Enviar por WhatsApp" : "Enviar por Correo"}
                 </button>
               </form>
             )}
