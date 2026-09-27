@@ -253,7 +253,7 @@ export function Contact() {
                   className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-medium hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/25"
                 >
                   <Send size={18} aria-hidden="true" />
-                  {sendMethod === "whatsapp" ? "Enviar por WhatsApp" : "Enviar por Correo"}
+                  Enviar Mensaje
                 </button>
               </form>
             )}
