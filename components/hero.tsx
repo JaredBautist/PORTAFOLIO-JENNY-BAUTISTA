@@ -24,7 +24,7 @@ export function Hero() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-24 sm:pt-28 sm:pb-16">
+      <div className="container mx-auto px-4 relative z-10 pt-24 pb-24 sm:pt-28">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           {/* Doctor Image — visible en móvil arriba, en desktop a la derecha */}
           <motion.div
@@ -55,7 +55,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-4 py-2 mb-4 text-xs font-medium tracking-widest uppercase bg-primary/10 text-primary rounded-full">
-                Psicoterapeuta Conductual
+                Psicoterapeuta Conductual &bull; Terapia Online y Presencial en Colombia
               </span>
             </motion.div>
 
@@ -74,8 +74,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-pretty"
             >
-              Transformando vidas a través de la terapia conductual. Te ayudo a alcanzar 
-              el equilibrio emocional y desarrollar hábitos de vida saludables.
+              Transformando vidas a través de la terapia conductual y psicológica. Te ayudo a superar la ansiedad, manejar el estrés y desarrollar el equilibrio emocional con hábitos de vida saludables.
             </motion.p>
 
             <motion.div
@@ -147,12 +146,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator — oculto en pantallas bajas para no chocar con los CTAs */}
+      {/* Scroll Indicator — solo desktop: en móvil/tablet el contenido es alto y el indicador absoluto se monta sobre los datos de contacto */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden min-[420px]:block"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
       >
         <Link
           href="#sobre-mi"
