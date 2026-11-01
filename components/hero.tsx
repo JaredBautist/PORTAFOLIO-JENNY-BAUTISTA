@@ -24,14 +24,14 @@ export function Hero() {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-24 pb-24 sm:pt-28">
+      <div className="container mx-auto px-4 relative z-10 pt-[5.5rem] pb-16 sm:pt-28 sm:pb-24 hero-content">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
           {/* Doctor Image — visible en móvil arriba, en desktop a la derecha */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative block lg:hidden order-first"
+            className="relative block lg:hidden order-first hero-mobile-photo"
           >
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full transform rotate-3" />
@@ -40,6 +40,7 @@ export function Hero() {
                   src="/images/dra-jenny.jpg"
                   alt="Dra. Jenny Bautista García, psicoterapeuta conductual en Colombia"
                   fill
+                  sizes="(min-width: 640px) 256px, 192px"
                   className="object-cover object-top"
                   priority
                 />
@@ -55,7 +56,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-4 py-2 mb-4 text-xs font-medium tracking-widest uppercase bg-primary/10 text-primary rounded-full">
-                Psicoterapeuta Conductual &bull; Terapia Online y Presencial en Colombia
+                Psicoterapeuta Conductual &bull; Online y Presencial en Colombia
               </span>
             </motion.div>
 
@@ -105,11 +106,11 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-6"
+              className="mt-6 flex flex-row flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1 sm:gap-6"
             >
               <a
                 href="tel:+573106139879"
-                className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center sm:justify-start gap-2 min-h-11 px-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone size={16} />
                 +57 310 613 9879
@@ -118,7 +119,7 @@ export function Hero() {
                 href="https://www.instagram.com/jennybautista_oficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center sm:justify-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center justify-center sm:justify-start gap-2 min-h-11 px-2 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram size={16} />
                 @jennybautista_oficial
@@ -140,8 +141,8 @@ export function Hero() {
                   src="/images/dra-jenny.jpg"
                   alt="Dra. Jenny Bautista García, psicoterapeuta conductual en Colombia"
                   fill
+                  sizes="448px"
                   className="object-cover object-top"
-                  priority
                 />
               </div>
             </div>

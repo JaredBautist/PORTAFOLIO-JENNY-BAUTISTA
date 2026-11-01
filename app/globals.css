@@ -123,6 +123,49 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* En móvil apaisado el hero prioriza el mensaje, no la fotografía */
+@media (orientation: landscape) and (max-height: 560px) {
+  .hero-mobile-photo {
+    display: none;
+  }
+  .hero-content {
+    padding-top: 5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* Feedback inmediato al tocar en pantallas sin hover */
+@media (hover: none) {
+  a:active,
+  button:active {
+    opacity: 0.85;
+  }
 }
 
 html {

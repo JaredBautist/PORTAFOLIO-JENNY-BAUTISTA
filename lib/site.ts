@@ -1,18 +1,27 @@
+function normalizeSiteUrl(value: string): string {
+  const withProtocol = value.trim().startsWith('http')
+    ? value.trim()
+    : `https://${value.trim()}`
+  return withProtocol.replace(/\/+$/, '')
+}
+
 function resolveSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
-    const url = process.env.NEXT_PUBLIC_SITE_URL.trim()
-    return url.startsWith('http') ? url : `https://${url}`
+    return normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL)
   }
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    return normalizeSiteUrl(process.env.VERCEL_PROJECT_PRODUCTION_URL)
   }
   if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`
+    return normalizeSiteUrl(process.env.VERCEL_URL)
   }
   return 'https://jennybautistagarcia.com'
 }
 
 export const SITE_URL = resolveSiteUrl()
+
+/** Fecha de la última revisión de contenido (ISO 8601, solo fecha) */
+export const CONTENT_LAST_MODIFIED = '2026-11-01'
 
 export const siteConfig = {
   name: 'Jenny Bautista García',

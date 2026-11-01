@@ -123,6 +123,7 @@ export function Services() {
                 src="/images/capacitaciones.png"
                 alt="Capacitaciones empresariales en bienestar laboral, manejo del estrés y prevención del burnout en Colombia"
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />

@@ -22,7 +22,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-12">
           {/* Brand */}
           <div>
-            <Link href="#inicio" className="inline-block mb-4">
+            <Link href="#inicio" className="flex items-center min-h-11 mb-4">
               <span className="font-serif text-2xl font-bold">Jenny Bautista</span>
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
@@ -34,7 +34,7 @@ export function Footer() {
                 href="https://www.instagram.com/jennybautista_oficial/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-11 h-11 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -43,7 +43,7 @@ export function Footer() {
                 href="https://www.facebook.com/jenny.bautista.garcia.2025?locale=es_LA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-11 h-11 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -52,14 +52,14 @@ export function Footer() {
                 href="https://www.tiktok.com/@jennybautistagarcia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-11 h-11 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="TikTok"
               >
                 <TikTok size={18} />
               </a>
               <a
                 href="tel:+573106139879"
-                className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
+                className="w-11 h-11 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
                 aria-label="Teléfono"
               >
                 <Phone size={18} />
@@ -81,7 +81,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-background/70 hover:text-background transition-colors text-sm"
+                  className="text-background/70 hover:text-background transition-colors text-sm min-h-11 flex items-center"
                 >
                   {link.label}
                 </Link>
@@ -93,25 +93,25 @@ export function Footer() {
           <div>
             <h4 className="font-medium text-lg mb-4">Contacto</h4>
             <div className="space-y-3 text-sm text-background/70">
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 min-h-11">
                 <Phone size={14} className="text-background/50" />
-                <a href="tel:+573106139879" className="hover:text-background transition-colors">
+                <a href="tel:+573106139879" className="hover:text-background transition-colors min-h-11 flex items-center">
                   +57 310 613 9879
                 </a>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 min-h-11">
                 <Mail size={14} className="text-background/50" />
-                <a href="mailto:jennybautista28@hotmail.com" className="hover:text-background transition-colors">
+                <a href="mailto:jennybautista28@hotmail.com" className="hover:text-background transition-colors min-h-11 flex items-center">
                   jennybautista28@hotmail.com
                 </a>
               </p>
-              <p className="flex items-center gap-2">
+              <p className="flex items-center gap-2 min-h-11">
                 <Instagram size={14} className="text-background/50" />
                 <a 
                   href="https://www.instagram.com/jennybautista_oficial/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
+                  className="hover:text-background transition-colors min-h-11 flex items-center"
                 >
                   @jennybautista_oficial
                 </a>

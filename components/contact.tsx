@@ -131,7 +131,7 @@ export function Contact() {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-background rounded-3xl p-5 sm:p-8 border border-border"
+            className="bg-background rounded-3xl p-5 sm:p-8 border border-border min-w-0"
           >
             <h3 className="font-serif text-xl font-bold text-foreground mb-6">
               Envíame un Mensaje
@@ -161,6 +161,7 @@ export function Contact() {
                     type="text"
                     id="name"
                     required
+                    autoComplete="name"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-foreground"
@@ -177,6 +178,8 @@ export function Contact() {
                       type="email"
                       id="email"
                       required
+                      autoComplete="email"
+                      inputMode="email"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-foreground"
@@ -190,6 +193,8 @@ export function Contact() {
                     <input
                       type="tel"
                       id="phone"
+                      autoComplete="tel"
+                      inputMode="tel"
                       value={formState.phone}
                       onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                       className="w-full px-4 py-3 bg-card border border-border rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-foreground"
@@ -214,7 +219,7 @@ export function Contact() {
                 </div>
 
                 {/* Selector de canal de envío */}
-                <fieldset>
+                <fieldset className="min-w-0">
                   <legend className="block text-sm font-medium text-foreground mb-2">
                     ¿Cómo prefieres enviarlo?
                   </legend>
@@ -264,7 +269,7 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center min-w-0"
           >
             <h3 className="font-serif text-xl font-bold text-foreground mb-8">
               Información de Contacto

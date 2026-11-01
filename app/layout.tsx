@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
-import { siteConfig } from '@/lib/site'
+import { siteConfig, CONTENT_LAST_MODIFIED } from '@/lib/site'
 import './globals.css'
 
 const inter = Inter({ 
@@ -105,6 +105,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  interactiveWidget: 'resizes-content',
   themeColor: '#0d9488',
 }
 
@@ -138,7 +139,7 @@ const jsonLd = {
         { '@id': `${SITE_URL}/#clinic` },
         { '@id': `${SITE_URL}/#person` },
       ],
-      lastReviewed: '2026-11-01',
+      lastReviewed: CONTENT_LAST_MODIFIED,
       reviewedBy: {
         '@id': `${SITE_URL}/#person`,
       },

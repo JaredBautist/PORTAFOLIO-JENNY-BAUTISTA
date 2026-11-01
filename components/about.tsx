@@ -89,6 +89,7 @@ export function About() {
                   src="/images/mision.png"
                   alt="Misión: acompañamiento para cambiar emociones, hábitos y conductas"
                   fill
+                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
@@ -118,6 +119,7 @@ export function About() {
                   src="/images/vision.png"
                   alt="Visión: bienestar emocional para personas, empresas e instituciones"
                   fill
+                  sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
@@ -157,6 +159,7 @@ export function About() {
                 src="/images/objetivos.png"
                 alt="Objetivos de la psicoterapia: crecimiento personal y equilibrio emocional"
                 fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent" />

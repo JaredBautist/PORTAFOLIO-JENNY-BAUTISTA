@@ -15,14 +15,16 @@ pnpm build    # build de producción
 - **Metadata completa**: title, description, Open Graph, Twitter Cards, canonical (`app/layout.tsx`)
 - **Imagen Open Graph generada automáticamente** (1200×630) en `app/opengraph-image.tsx`
 - **JSON-LD** (`Person` + `ContactPoint` + ofertas con precios COP) para resultados enriquecidos en Google
-- **`robots.txt`** y **`sitemap.xml`** generados automáticamente (`app/robots.ts`, `app/sitemap.ts`)
+- **`robots.txt`** y **`sitemap.xml`** generados automáticamente (`app/robots.ts`, `app/sitemap.xml/route.ts`)
+- **Sitemap de imágenes** con título y descripción para Google Imágenes (las 5 imágenes del sitio)
+- **Fecha de revisión de contenido** centralizada en `CONTENT_LAST_MODIFIED` (`lib/site.ts`), usada por el sitemap y el schema `MedicalWebPage`
 - **Manifest PWA** (`app/manifest.ts`) con iconos y theme-color
 - **Viewport optimizado para móviles** (`export const viewport` en el layout)
 
 ## 🌐 Publicar en Google — checklist
 
 ### 1. Configura el dominio real
-Edita `lib/site.ts` y reemplaza `SITE_URL` por tu dominio definitivo (ej. `https://jennybautistagarcia.com`). Esa constante alimenta metadata, sitemap, robots y JSON-LD.
+`lib/site.ts` toma el dominio en este orden: `NEXT_PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` → `VERCEL_URL` → `https://jennybautistagarcia.com`. Si usas dominio propio, define `NEXT_PUBLIC_SITE_URL` en Vercel. Esa constante alimenta metadata, canonical, sitemap, robots y JSON-LD.
 
 ### 2. Despliega el sitio
 - **Vercel** (recomendado para Next.js): conecta el repo en [vercel.com](https://vercel.com) y despliega.
@@ -70,7 +72,7 @@ app/
   layout.tsx    → metadata, JSON-LD, fuentes, skip-link
   page.tsx      → composición de secciones
   robots.ts     → robots.txt
-  sitemap.ts    → sitemap.xml
+  sitemap.xml/route.ts → sitemap.xml (incluye imágenes)
   manifest.ts   → manifest PWA
   opengraph-image.tsx → imagen social generada
 components/     → secciones de la página + whatsapp-fab

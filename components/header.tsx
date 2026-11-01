@@ -36,6 +36,31 @@ export function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown)
   }, [isMobileMenuOpen])
 
+  // Bloquear el scroll del fondo mientras el menú móvil está abierto
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const html = document.documentElement
+    const body = document.body
+    const previousBodyOverflow = body.style.overflow
+    const previousHtmlOverflow = html.style.overflow
+    body.style.overflow = "hidden"
+    html.style.overflow = "hidden"
+    return () => {
+      body.style.overflow = previousBodyOverflow
+      html.style.overflow = previousHtmlOverflow
+    }
+  }, [isMobileMenuOpen])
+
+  // Cerrar el menú si la pantalla pasa al layout de escritorio
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) setIsMobileMenuOpen(false)
+    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [isMobileMenuOpen])
+
   return (
     <header
       className={cn(
@@ -46,7 +71,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="#inicio" className="flex flex-col">
+        <Link href="#inicio" className="flex flex-col justify-center min-h-11">
           <span className="font-serif text-xl md:text-2xl font-bold text-foreground">
             Jenny Bautista
           </span>
@@ -71,7 +96,7 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden p-2.5 min-h-11 min-w-11 flex items-center justify-center text-foreground"
           aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-nav"
@@ -85,8 +110,8 @@ export function Header() {
         id="mobile-nav"
         inert={!isMobileMenuOpen}
         className={cn(
-          "lg:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-md shadow-lg transition-all duration-300 overflow-hidden",
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          "lg:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-md shadow-lg transition-all duration-300 overflow-y-auto overscroll-contain",
+          isMobileMenuOpen ? "max-h-[calc(100svh-5rem)] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
@@ -95,7 +120,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+              className="text-base font-medium text-foreground/80 hover:text-primary transition-colors py-3 min-h-11 flex items-center"
             >
               {link.label}
             </Link>
