@@ -26,8 +26,8 @@ export function Footer() {
               <span className="font-serif text-2xl font-bold">Jenny Bautista</span>
             </Link>
             <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Psicoterapeuta Conductual dedicada a transformar vidas a traves del 
-              equilibrio emocional y el desarrollo de habitos saludables.
+              Psicoterapeuta Conductual dedicada a transformar vidas a través del 
+              equilibrio emocional y el desarrollo de hábitos saludables. Terapia online y presencial en Colombia.
             </p>
             <div className="flex gap-3">
               <a
@@ -60,7 +60,7 @@ export function Footer() {
               <a
                 href="tel:+573106139879"
                 className="w-10 h-10 bg-background/10 rounded-full flex items-center justify-center hover:bg-background/20 transition-colors"
-                aria-label="Telefono"
+                aria-label="Teléfono"
               >
                 <Phone size={18} />
               </a>
@@ -69,10 +69,10 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="sm:col-span-1">
-            <h4 className="font-medium text-lg mb-4">Enlaces Rapidos</h4>
+            <h4 className="font-medium text-lg mb-4">Enlaces Rápidos</h4>
             <nav className="flex flex-col gap-3">
               {[
-                { href: "#sobre-mi", label: "Sobre Mi" },
+                { href: "#sobre-mi", label: "Sobre Mí" },
                 { href: "#servicios", label: "Servicios" },
                 { href: "#capacitaciones", label: "Capacitaciones" },
                 { href: "#precios", label: "Precios" },

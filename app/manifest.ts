@@ -5,9 +5,13 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: `${siteConfig.name} | ${siteConfig.role}`,
     short_name: siteConfig.name,
-    description: 'Psicoterapeuta conductual especializada en bienestar emocional y capacitaciones empresariales en Colombia.',
+    description: 'Psicoterapia conductual online y presencial en Colombia: ansiedad, estrés, depresión y capacitaciones empresariales en bienestar laboral.',
     start_url: '/',
+    scope: '/',
     display: 'standalone',
+    lang: 'es-CO',
+    dir: 'ltr',
+    categories: ['health', 'medical', 'lifestyle'],
     background_color: '#ffffff',
     theme_color: '#0d9488',
     icons: [

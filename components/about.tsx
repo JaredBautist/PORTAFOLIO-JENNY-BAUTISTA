@@ -29,7 +29,7 @@ export function About() {
           className="text-center mb-10 md:mb-16"
         >
           <span className="text-primary text-sm font-medium tracking-widest uppercase">
-            Conoceme
+            Conóceme
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mt-2">
             Perfil Profesional
@@ -46,15 +46,17 @@ export function About() {
             className="space-y-4 md:space-y-6"
           >
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              Soy una persona comprometida con mi trabajo, emprendedora, paciente y con 
-              mucha inteligencia emocional. Siempre entrego lo mejor de mi a las personas 
-              que me necesitan, doy acompanamiento y soy una mujer de soluciones, muy proactiva.
+              Soy una profesional comprometida, emprendedora y paciente, con una gran 
+              inteligencia emocional. Entrego lo mejor de mí a cada persona que me consulta: 
+              acompaño su proceso, propongo soluciones y trabajo con técnicas conductuales 
+              para que los cambios se sostengan en el tiempo.
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">Terapeuta ocupacional</strong> de profesion, 
+              <strong className="text-foreground">Terapeuta ocupacional</strong> de profesión, 
               <strong className="text-foreground"> Especialista en Alta Gerencia</strong>, 
               <strong className="text-foreground"> Especialista en Gerencia en Salud Ocupacional</strong> y 
-              <strong className="text-foreground"> Psicoterapeuta Conductual</strong>.
+              <strong className="text-foreground"> Psicoterapeuta Conductual</strong>. Atiendo 
+              psicoterapia online y presencial en Colombia.
             </p>
             <p className="text-xl font-serif text-primary italic">
               A tu servicio.
@@ -85,7 +87,7 @@ export function About() {
               <div className="relative h-40 overflow-hidden">
                 <Image
                   src="/images/mision.png"
-                  alt="Mision - Ayudando a personas a cambiar sus vidas"
+                  alt="Misión: acompañamiento para cambiar emociones, hábitos y conductas"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -96,10 +98,10 @@ export function About() {
               </div>
               <div className="p-5">
                 <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                  Mision
+                  Misión
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Trabajar con personas y empresas para ayudarles a cambiar sus sentimientos, emociones y actitudes ante la vida, creando patrones de conducta donde puedan ser mas productivos, saludables y felices.
+                  Trabajar con personas y empresas para ayudarles a cambiar sus emociones, pensamientos y actitudes ante la vida, creando patrones de conducta que les permitan ser más productivos, saludables y felices.
                 </p>
               </div>
             </motion.div>
@@ -114,7 +116,7 @@ export function About() {
               <div className="relative h-40 overflow-hidden">
                 <Image
                   src="/images/vision.png"
-                  alt="Vision - Alcanzar el bienestar emocional"
+                  alt="Visión: bienestar emocional para personas, empresas e instituciones"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -125,10 +127,10 @@ export function About() {
               </div>
               <div className="p-5">
                 <h3 className="font-serif text-xl font-bold text-foreground mb-3">
-                  Vision
+                  Visión
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Lograr que todas las personas, empresas e instituciones que reciban mis servicios alcancen el bienestar que necesitan, desarrollando comportamientos fisicos, emocionales y sociales adecuados.
+                  Lograr que todas las personas, empresas e instituciones que reciban mis servicios alcancen el bienestar que necesitan, desarrollando comportamientos físicos, emocionales y sociales adecuados.
                 </p>
               </div>
             </motion.div>
@@ -153,7 +155,7 @@ export function About() {
             >
               <Image
                 src="/images/objetivos.png"
-                alt="Objetivos - Crecimiento personal y equilibrio emocional"
+                alt="Objetivos de la psicoterapia: crecimiento personal y equilibrio emocional"
                 fill
                 className="object-cover"
               />
@@ -174,10 +176,10 @@ export function About() {
               <div className="space-y-4">
                 {[
                   "Lograr un equilibrio emocional funcional en las personas",
-                  "Desarrollar habitos de vida saludables",
+                  "Desarrollar hábitos de vida saludables",
                   "Incrementar el positivismo y las ganas de vivir",
                   "Enfocar a las personas en hacer su vida productiva",
-                  "Crear impacto social a traves de tecnicas conductuales",
+                  "Crear impacto social a través de técnicas conductuales",
                 ].map((objective, index) => (
                   <motion.div
                     key={index}

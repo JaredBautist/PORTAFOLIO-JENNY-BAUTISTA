@@ -19,15 +19,15 @@ import Image from "next/image"
 
 const capacitaciones = [
   { icon: Sparkles, title: "Estilos de Vida Saludables" },
-  { icon: Brain, title: "Manejo del Estres" },
+  { icon: Brain, title: "Manejo del Estrés" },
   { icon: Heart, title: "Autoestima Enfocada al Amor Propio" },
-  { icon: MessageCircle, title: "Comunicacion Asertiva" },
+  { icon: MessageCircle, title: "Comunicación Asertiva" },
   { icon: Clock, title: "Manejo del Tiempo Libre" },
   { icon: Users, title: "Relaciones Interpersonales Afectivas" },
   { icon: Zap, title: "Inteligencia Emocional para Empresas" },
-  { icon: BookOpen, title: "Depresion en Adolescencia y Edad Adulta" },
+  { icon: BookOpen, title: "Depresión en la Adolescencia y Edad Adulta" },
   { icon: Lightbulb, title: "Manejo de la Voluntad" },
-  { icon: Volume2, title: "Educacion de la Voz Interior" },
+  { icon: Volume2, title: "Educación de la Voz Interior" },
 ]
 
 export function Services() {
@@ -47,11 +47,11 @@ export function Services() {
             Mis Servicios
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mt-2 mb-4">
-            Areas de Trabajo
+            Áreas de Trabajo
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
-            Trabajo con personas y empresas en todas las areas que nos desempenamos 
-            en la vida diaria: mental, fisica, social y laboral.
+            Trabajo con personas y empresas en todas las áreas en las que nos 
+            desempeñamos a diario: mental, física, social y laboral.
           </p>
         </motion.div>
 
@@ -60,26 +60,26 @@ export function Services() {
           {[
             {
               icon: Brain,
-              title: "Area Mental",
-              description: "Trabajo en pensamientos, emociones y patrones conductuales para lograr equilibrio emocional.",
+              title: "Área Mental",
+              description: "Trabajo pensamientos, emociones y patrones conductuales para reducir la ansiedad y el estrés y recuperar el equilibrio emocional.",
               color: "from-primary/20 to-primary/5",
             },
             {
               icon: Heart,
-              title: "Area Fisica",
-              description: "Desarrollo de habitos de vida saludables que mejoren tu bienestar fisico.",
+              title: "Área Física",
+              description: "Desarrollo de hábitos de vida saludables que mejoren tu bienestar físico y tu energía diaria.",
               color: "from-accent/20 to-accent/5",
             },
             {
               icon: Users,
-              title: "Area Social",
-              description: "Mejora de relaciones interpersonales y habilidades de comunicacion.",
+              title: "Área Social",
+              description: "Mejora de relaciones interpersonales y habilidades de comunicación asertiva.",
               color: "from-primary/20 to-primary/5",
             },
             {
               icon: Smile,
-              title: "Area Laboral",
-              description: "Inteligencia emocional y productividad en el ambiente de trabajo.",
+              title: "Área Laboral",
+              description: "Inteligencia emocional y productividad en el ambiente de trabajo, con prevención del burnout.",
               color: "from-accent/20 to-accent/5",
             },
           ].map((area, index) => (
@@ -121,7 +121,7 @@ export function Services() {
             >
               <Image
                 src="/images/capacitaciones.png"
-                alt="Capacitaciones empresariales - Formacion profesional"
+                alt="Capacitaciones empresariales en bienestar laboral, manejo del estrés y prevención del burnout en Colombia"
                 fill
                 className="object-cover"
               />

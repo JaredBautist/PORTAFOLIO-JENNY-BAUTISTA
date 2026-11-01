@@ -38,7 +38,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-card rounded-full shadow-2xl overflow-hidden">
                 <Image
                   src="/images/dra-jenny.jpg"
-                  alt="Dra. Jenny Bautista Garcia - Psicoterapeuta Conductual"
+                  alt="Dra. Jenny Bautista García, psicoterapeuta conductual en Colombia"
                   fill
                   className="object-cover object-top"
                   priority
@@ -66,6 +66,9 @@ export function Hero() {
               className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 md:mb-6 text-balance"
             >
               Jenny Bautista García
+              <span className="sr-only">
+                {" "}— Psicoterapeuta conductual online y presencial en Colombia
+              </span>
             </motion.h1>
 
             <motion.p
@@ -74,7 +77,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-base md:text-lg lg:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-pretty"
             >
-              Transformando vidas a través de la terapia conductual y psicológica. Te ayudo a superar la ansiedad, manejar el estrés y desarrollar el equilibrio emocional con hábitos de vida saludables.
+              Psicoterapia conductual online y presencial en Colombia. Te acompaño a superar la ansiedad, manejar el estrés y recuperar el equilibrio emocional con hábitos de vida saludables.
             </motion.p>
 
             <motion.div
@@ -94,7 +97,7 @@ export function Hero() {
                 href="#sobre-mi"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 bg-card text-foreground rounded-full font-medium hover:bg-secondary transition-all border border-border text-sm sm:text-base"
               >
-                Conoce Más
+                Conoce mi enfoque
               </Link>
             </motion.div>
 
@@ -135,7 +138,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-card rounded-3xl shadow-2xl overflow-hidden">
                 <Image
                   src="/images/dra-jenny.jpg"
-                  alt="Dra. Jenny Bautista Garcia - Psicoterapeuta Conductual"
+                  alt="Dra. Jenny Bautista García, psicoterapeuta conductual en Colombia"
                   fill
                   className="object-cover object-top"
                   priority

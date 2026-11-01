@@ -19,10 +19,10 @@ const SITE_URL = siteConfig.url
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Jenny Bautista García | Psicoterapeuta Conductual y Psicóloga en Colombia',
+    default: 'Jenny Bautista García | Psicoterapia Online en Colombia',
     template: '%s | Dra. Jenny Bautista García',
   },
-  description: 'Psicoterapeuta conductual y psicóloga online en Colombia. Terapia para adultos, tratamiento de ansiedad, depresión, manejo del estrés laboral, estilos de vida saludables y capacitaciones empresariales en bienestar emocional.',
+  description: 'Psicoterapia conductual online y presencial en Colombia. Tratamiento de ansiedad, estrés y depresión, y capacitaciones empresariales en bienestar laboral.',
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: SITE_URL }],
   creator: siteConfig.name,
@@ -30,23 +30,28 @@ export const metadata: Metadata = {
   classification: 'Psicoterapia, Psicología Clínica y Salud Mental',
   keywords: [
     'psicóloga online Colombia',
+    'psicóloga online Bogotá',
     'psicoterapeuta conductual',
-    'terapia psicológica en Bogotá',
-    'consulta psicológica online',
+    'psicoterapia conductual online',
+    'terapia psicológica online',
     'terapia cognitivo conductual',
-    'psicóloga clínica Colombia',
+    'consulta psicológica virtual',
+    'psicóloga para adultos',
+    'terapia individual online',
     'tratamiento para la ansiedad',
-    'terapia para la depresión',
+    'terapia para el estrés',
     'manejo del estrés laboral',
-    'bienestar emocional',
-    'salud mental Colombia',
-    'capacitaciones empresariales bienestar laboral',
-    'inteligencia emocional',
+    'tratamiento para la depresión',
+    'prevención del burnout',
     'autoestima y amor propio',
+    'bienestar emocional',
     'estilos de vida saludables',
-    'psicoterapia virtual',
-    'terapia individual adultos',
-    'atención psicológica virtual',
+    'salud mental Colombia',
+    'capacitaciones empresariales en salud mental',
+    'talleres de bienestar laboral para empresas',
+    'charlas de bienestar emocional para empresas',
+    'psicóloga Jenny Bautista García',
+    'agendar cita con psicóloga online',
   ],
   alternates: {
     canonical: '/',
@@ -64,8 +69,8 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: SITE_URL,
     siteName: siteConfig.name,
-    title: 'Jenny Bautista García | Psicoterapeuta Conductual y Psicóloga en Colombia',
-    description: 'Transformando vidas a través de la terapia conductual y clínica. Tratamiento de ansiedad, estrés, estilos de vida saludables y capacitaciones empresariales.',
+    title: 'Jenny Bautista García | Psicoterapia Online en Colombia',
+    description: 'Psicoterapia online y presencial en Colombia. Ansiedad, estrés, depresión y autoestima, más capacitaciones empresariales en bienestar laboral.',
     images: [
       {
         url: '/images/dra-jenny.jpg',
@@ -77,8 +82,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jenny Bautista García | Psicoterapeuta Conductual y Psicóloga en Colombia',
-    description: 'Psicoterapeuta conductual especializada en bienestar emocional, manejo de la ansiedad y capacitaciones empresariales en Colombia.',
+    title: 'Jenny Bautista García | Psicoterapia Online en Colombia',
+    description: 'Psicoterapeuta conductual en Colombia. Terapia online y presencial para ansiedad, estrés y depresión, y capacitaciones en salud mental para empresas.',
     images: ['/images/dra-jenny.jpg'],
   },
   robots: {
@@ -107,6 +112,42 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: siteConfig.name,
+      description:
+        'Sitio oficial de Jenny Bautista García, psicoterapeuta conductual en Colombia. Psicoterapia online y presencial para adultos y capacitaciones empresariales en bienestar laboral.',
+      inLanguage: 'es-CO',
+      publisher: {
+        '@id': `${SITE_URL}/#person`,
+      },
+    },
+    {
+      '@type': 'MedicalWebPage',
+      '@id': `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: 'Jenny Bautista García | Psicoterapia Online en Colombia',
+      description:
+        'Psicoterapia conductual online y presencial en Colombia. Tratamiento de ansiedad, estrés y depresión, y capacitaciones empresariales en bienestar laboral.',
+      inLanguage: 'es-CO',
+      isPartOf: {
+        '@id': `${SITE_URL}/#website`,
+      },
+      about: [
+        { '@id': `${SITE_URL}/#clinic` },
+        { '@id': `${SITE_URL}/#person` },
+      ],
+      lastReviewed: '2026-11-01',
+      reviewedBy: {
+        '@id': `${SITE_URL}/#person`,
+      },
+      medicalAudience: {
+        '@type': 'MedicalAudience',
+        audienceType: 'Pacientes adultos en Colombia y el exterior',
+      },
+    },
+    {
       '@type': ['MedicalBusiness', 'ProfessionalService'],
       '@id': `${SITE_URL}/#clinic`,
       name: 'Consultorio Psicoterapéutico Dra. Jenny Bautista García',
@@ -114,9 +155,17 @@ const jsonLd = {
       logo: `${SITE_URL}/images/dra-jenny.jpg`,
       image: `${SITE_URL}/images/dra-jenny.jpg`,
       description:
-        'Servicios profesionales de psicoterapia conductual, consulta psicológica online y presencial, y capacitaciones empresariales en salud mental y bienestar laboral.',
+        'Consultorio de psicoterapia conductual online y presencial en Colombia. Tratamiento de ansiedad, estrés, depresión y autoestima, y capacitaciones empresariales en salud mental y bienestar laboral.',
       telephone: siteConfig.phoneE164,
       email: siteConfig.email,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: siteConfig.phoneE164,
+        contactType: 'Reservas y consultas',
+        availableLanguage: ['Spanish'],
+        areaServed: 'CO',
+      },
+      currenciesAccepted: 'COP',
       priceRange: '$$',
       isAcceptingNewPatients: true,
       medicalSpecialty: 'Psychotherapy',
@@ -134,19 +183,46 @@ const jsonLd = {
         {
           '@type': 'MedicalTherapy',
           name: 'Psicoterapia Conductual Individual',
-          description: 'Tratamiento personalizado para ansiedad, depresión, manejo del estrés y equilibrio emocional.',
+          description: 'Terapia online y presencial para adultos con ansiedad, estrés, depresión y dificultades de autoestima.',
         },
         {
           '@type': 'MedicalTherapy',
           name: 'Consulta Psicológica Online',
-          description: 'Sesiones de terapia psicológica virtual disponibles para Colombia y el exterior.',
+          description: 'Sesiones de psicoterapia virtual para Colombia y el exterior, con seguimiento personalizado.',
         },
         {
           '@type': 'EducationalOccupationalProgram',
           name: 'Capacitaciones Empresariales en Salud Mental',
-          description: 'Talleres corporativos de bienestar laboral, manejo del estrés, prevención de burnout e inteligencia emocional.',
+          description: 'Talleres y charlas de bienestar laboral, manejo del estrés, prevención del burnout e inteligencia emocional para empresas e instituciones.',
         },
       ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Servicios de psicoterapia y bienestar laboral',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Psicoterapia conductual individual online y presencial',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Consulta psicológica online para Colombia y el exterior',
+            },
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Capacitaciones empresariales en salud mental y bienestar laboral',
+            },
+          },
+        ],
+      },
       sameAs: Object.values(siteConfig.social),
     },
     {
@@ -155,11 +231,34 @@ const jsonLd = {
       name: siteConfig.name,
       jobTitle: 'Psicoterapeuta Conductual y Especialista en Salud Mental',
       description:
-        'Psicoterapeuta conductual especializada en bienestar emocional, estilos de vida saludables, desarrollo personal y salud ocupacional.',
+        'Psicoterapeuta conductual especializada en bienestar emocional, manejo de la ansiedad y el estrés, hábitos de vida saludables y salud ocupacional. Psicoterapia online y presencial en Colombia.',
       url: SITE_URL,
       image: `${SITE_URL}/images/dra-jenny.jpg`,
       telephone: siteConfig.phoneE164,
       email: `mailto:${siteConfig.email}`,
+      hasCredential: [
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'degree',
+          name: 'Terapeuta Ocupacional',
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'degree',
+          name: 'Especialista en Alta Gerencia',
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'degree',
+          name: 'Especialista en Gerencia en Salud Ocupacional',
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'certification',
+          name: 'Psicoterapeuta Conductual',
+        },
+      ],
+      knowsLanguage: ['es'],
       worksFor: {
         '@id': `${SITE_URL}/#clinic`,
       },
@@ -191,6 +290,10 @@ const jsonLd = {
         'Salud mental ocupacional',
         'Inteligencia emocional',
         'Estilos de vida saludables',
+        'Terapia online',
+        'Prevención del burnout',
+        'Manejo del estrés laboral',
+        'Autoestima y amor propio',
       ],
       sameAs: Object.values(siteConfig.social),
     },

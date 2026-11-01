@@ -8,6 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
+      images: [
+        `${siteConfig.url}/images/dra-jenny.jpg`,
+        `${siteConfig.url}/images/capacitaciones.png`,
+      ],
     },
   ]
 }

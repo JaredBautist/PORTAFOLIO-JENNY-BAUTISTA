@@ -64,11 +64,11 @@ export function Pricing() {
             Inversión en tu Bienestar
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground mt-2 mb-4">
-            Precios de Capacitaciones
+            Precios de Psicoterapia
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Elige el plan que mejor se adapte a tus necesidades. 
-            Cada sesión está diseñada para ayudarte a alcanzar tu bienestar.
+            Elige la sesión que mejor se adapte a tu proceso. 
+            Cada encuentro está diseñado para ayudarte a recuperar tu bienestar emocional.
           </p>
         </motion.div>
 
@@ -122,6 +122,7 @@ export function Pricing() {
 
               <Link
                 href="#contacto"
+                aria-label={`Reservar ${plan.name} de psicoterapia`}
                 className={`w-full py-4 rounded-full font-medium transition-all flex items-center justify-center ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25"
@@ -141,8 +142,9 @@ export function Pricing() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-center text-sm text-muted-foreground mt-12 max-w-xl mx-auto"
         >
-          * Los precios son por sesión individual o capacitación grupal. 
-          Para cotizaciones empresariales personalizadas, contáctame directamente.
+          * Los precios corresponden a sesiones individuales de psicoterapia, 
+          online o presencial. Para cotizaciones de capacitaciones empresariales, 
+          contáctame directamente.
         </motion.p>
       </div>
     </section>

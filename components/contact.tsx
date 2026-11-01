@@ -70,7 +70,7 @@ export function Contact() {
   const contactInfo = [
     {
       icon: Phone,
-      label: "Telefono",
+      label: "Teléfono",
       value: "+57 310 613 9879",
       href: "tel:+573106139879",
     },
@@ -121,7 +121,7 @@ export function Contact() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-base">
             ¿Listo para comenzar tu camino hacia el bienestar? 
-            Estoy aquí para ayudarte. Escríbeme o llámame.
+            Escríbeme o llámame y agendamos tu primera sesión de psicoterapia online o presencial.
           </p>
         </motion.div>
 
